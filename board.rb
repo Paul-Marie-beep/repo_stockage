@@ -11,12 +11,12 @@ class Board
     a1 = BoardCase.new("a1", " ")
     a2 = BoardCase.new("a2", " ")
     a3 = BoardCase.new("a3", " ")
-    b4 = BoardCase.new("b4", " ")
-    b5 = BoardCase.new("b5", " ")
-    b6 = BoardCase.new("b6", " ")
-    c7 = BoardCase.new("c7", " ")
-    c8 = BoardCase.new("c8", " ")
-    c9 = BoardCase.new("c9", " ")
+    b1 = BoardCase.new("b1", " ")
+    b2 = BoardCase.new("b2", " ")
+    b3 = BoardCase.new("b3", " ")
+    c1 = BoardCase.new("c1", " ")
+    c2 = BoardCase.new("c2", " ")
+    c3 = BoardCase.new("c3", " ")
 
     @boardcase_array = []
     @count_turn = 0
@@ -24,17 +24,17 @@ class Board
      @boardcase_array[0] = a1
      @boardcase_array[1] = a2
      @boardcase_array[2] = a3
-     @boardcase_array[3] = b4
-     @boardcase_array[4] = b5
-     @boardcase_array[5] = b6
-     @boardcase_array[6] = c7
-     @boardcase_array[7] = c8
-     @boardcase_array[8] = c9
+     @boardcase_array[3] = b1
+     @boardcase_array[4] = b2
+     @boardcase_array[5] = b3
+     @boardcase_array[6] = c1
+     @boardcase_array[7] = c2
+     @boardcase_array[8] = c3
     
   end
 
   def play_turn  #Faire un compteur pour savoir si on est arrivé au bout du jeu
-    puts "#{current_player}, Sur quelle case voulez-vous jouer"
+    puts "#{current_player}, sur quelle case voulez-vous jouer"
     puts ">"
     input = gets.chomp
     @boardcase_array.each do |boardcase|
@@ -49,7 +49,7 @@ class Board
 
     
 
-  end
+  
 
   def victory #On teste toutes les combinaisons pour savoir si un jouer a gagné
       if @boardcase_array[0].type == "X"  && @boardcase_array[1].type == "X" && @boardcase_array[2].type == "X"
@@ -88,8 +88,8 @@ class Board
         return "Y"
       elsif @count_turn == 9
         return "Match nul"  
-      elsif 
-        return "En cours"  
+      else
+        return "ongoing"
       end
     end
       
@@ -107,7 +107,7 @@ class Board
 
 
 
-  binding.pry
+  #binding.pry
 
 
 
